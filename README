@@ -1,0 +1,21 @@
+Rails form tag and options helper for easily constructing jQuery driven
+drop-down menus. 
+
+http://www.filamentgroup.com/lab/jquery_ipod_style_and_flyout_menus/
+
+Copy the jquery_dropdown_helper.rb file to <your-rails-app>/lib 
+Use the tags or helpers in your views. 
+
+Examples: 
+# <%= hidden_field_tag sort_criteria %>
+# <%= dropdown_tags sort_criteria, 'Select Criteria', 
+# 	%w(Category Status Amount-High Amount-Low) %>
+# # => Creates a drop-down with four items. No callback specified
+
+# <%= hidden_field_tag 'budget_main', @budgets.first.id %>
+# <%= dropdown_tags 'budget_main', @budgets.first.name, 
+#	@budgets.map {|x| [x.name, x.id]}, :select => 'onBudgetSelect' %>
+# # => A drop down menu comprising of budget items, showing name of 
+# # first budget item, with resultant javascript callback 
+# # onBudgetSelect(selected_value) when a menu item is selected.
+
