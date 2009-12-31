@@ -46,7 +46,7 @@ module ActionView
 				markup = <<-END
 				<a id="#{id}" class="fg-button fg-button-icon-right ui-widget ui-corner-all ui-state-default" href="##{id}-items" tabindex="0" #{style}>
 					<span class="ui-icon ui-icon-triangle-1-s"></span>#{name}</a>
-				<div id="#{id}-items" class="hidden" #{style}>#{options_for_fancy_menu(content)}</div>
+				<div id="#{id}-items" class="hidden" #{style}>#{options_for_dropdown(content)}</div>
 				<script type="text/javascript">
 					jQuery('##{id}').menu({
 						content: jQuery('##{id}-items').html(),
@@ -93,7 +93,7 @@ module ActionView
 				list_items = contents.inject([]) do |list, element|
 					text, value = dropdown_content_text_and_value(element)
 					submenu = if element.respond_to?(:third) and element.third
-						options_for_fancy_menu(element.third)
+						options_for_dropdown(element.third)
 					else
 						""
 					end
